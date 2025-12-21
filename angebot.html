@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Angebot – Hausverwaltung Deusch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Hausverwaltung Deusch – Wohnungsangebote, Vermietung und Bewerbung im Raum Burghausen." />
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body class="page page--offer">
+  <!-- HEADER -->
+  <header class="site-header site-header--blend">
+    <div class="container">
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="logo" href="index.html#start">
+          <img class="logo-image" src="./assets/img/Logo.png" alt="Hausverwaltung Deusch" />
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+          <a href="index.html#start">Start</a>
+          <a class="is-active" aria-current="page" href="angebot.html">Angebot</a>
+          <a href="projects.html">Projekte</a>
+          <a class="nav-cta" href="mailto:hausverwaltung.deusch@gmail.com">Kontakt</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- ANGEBOT / ANZEIGE -->
+    <section id="start">
+      <div class="container offer-layout fade-in">
+
+        <!-- LINKS: SLIDER -->
+        <div class="offer-slider" aria-label="Wohnungsbilder">
+          <div class="offer-slide active">
+            <img src="./assets/img/anzeigen/139-140.jpeg" alt="Wohnung Altstadt Burghausen" />
+          </div>
+          <div class="offer-slide">
+            <img src="./assets/img/anzeigen/139-140-2.jpeg" alt="Wohnzimmer Ansicht" />
+          </div>
+          <div class="offer-slide">
+            <img src="./assets/img/anzeigen/139-140-3.jpeg" alt="Bad Ansicht" />
+          </div>
+        </div>
+
+        <!-- RECHTS: DATEN -->
+        <div class="offer-data">
+          <p class="section-eyebrow">Aktuelle Anzeige</p>
+          <h1>2-Zimmer-Altbauwohnung</h1>
+
+          <ul class="offer-facts">
+            <li><strong>Miete:</strong> 820 € kalt</li>
+            <li><strong>Nebenkosten:</strong> ca. 160 €</li>
+            <li><strong>Wohnfläche:</strong> 58 m²</li>
+            <li><strong>Zimmer:</strong> 2</li>
+            <li><strong>Lage:</strong> Burghausen · Altstadt</li>
+            <li><strong>Verfügbar ab:</strong> 01.04.2025</li>
+          </ul>
+
+          <div class="hero-actions" style="margin-top:18px">
+            <a class="btn-primary" href="#bewerben">Jetzt bewerben</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BEWERBUNG -->
+    <section id="bewerben">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-eyebrow">Bewerbung</div>
+          <div class="section-title">Unterlagen & kurze Nachricht</div>
+          <p class="section-subtitle">
+            Bitte laden Sie die Formulare herunter, füllen Sie diese aus und senden Sie uns Ihre Bewerbung gesammelt per E-Mail.
+          </p>
+        </div>
+
+        <!-- FORMULARE -->
+        <div class="offer-downloads fade-in">
+          <a class="btn-secondary" href="./assets/docs/Selbstauskunft.pdf" target="_blank" rel="noopener">
+            Selbstauskunft (PDF)
+          </a>
+          <a class="btn-secondary" href="./assets/docs/Bürgerschaft.pdf" target="_blank" rel="noopener">
+            Bürgschaft (PDF)
+          </a>
+        </div>
+
+        <!-- NACHRICHT -->
+        <div class="fade-in">
+          <textarea
+            class="offer-message"
+            placeholder="Kurze Nachricht an uns (z. B. Anzahl Personen, Beruf, gewünschter Einzugstermin) …"></textarea>
+        </div>
+
+        <!-- MAIL -->
+        <div class="fade-in">
+          <a
+            class="btn-primary"
+            href="mailto:hausverwaltung.deusch@gmail.com?subject=Wohnungsbewerbung%20Altstadt&body=Guten%20Tag%2C%0A%0Aich%20interessiere%20mich%20für%20die%20angebotene%202-Zimmer-Altbauwohnung.%0A%0AAnbei%20sende%20ich%20Ihnen%20meine%20Unterlagen.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0A">
+            Bewerbung per E-Mail senden →
+          </a>
+        </div>
+
+        <p class="contact-note fade-in" style="margin-top:14px">
+          <strong>Datenschutz:</strong>
+          Bitte senden Sie nur die notwendigen Unterlagen.
+          Weitere Informationen finden Sie in unserer
+          <a class="inline-link" href="datenschutz.html">Datenschutzerklärung</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Hausverwaltung Deusch</div>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+      <div>
+        <a class="inline-link" href="mailto:hausverwaltung.deusch@gmail.com">
+          hausverwaltung.deusch@gmail.com
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

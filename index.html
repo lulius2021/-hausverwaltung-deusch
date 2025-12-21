@@ -2,51 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-<title>Hausverwaltung Deusch in Burghausen | Altbau & Kernsanierung</title>  
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Hausverwaltung Deusch in Burghausen: Betreuung und Entwicklung eigener Altstadt-Objekte, Modernisierung und Sanierung im Bestand. Kontakt per E-Mail." />
-<link rel="canonical" href="https://hausverwaltung-deusch.vercel.app/" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Hausverwaltung Deusch",
-  "areaServed": "Burghausen",
-  "email": "hausverwaltung@deusch.de",
-  "url": "https://hausverwaltung-deusch.vercel.app/"
-}
-</script>
-<link rel="stylesheet" href="css/style.css" />
+  <title>Hausverwaltung Deusch – Altbau. Erhalten. Modernisieren.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Hausverwaltung Deusch – Hausverwaltung, Vermietung und Sanierungen im Raum Burghausen. Familienunternehmen mit Herzblut." />
+
+  <!-- korrekt: Pfad zu deinem CSS -->
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+
+  <!-- optional, aber empfohlen: korrektes JS im Head (defer) -->
+  <script defer src="./assets/js/main.js"></script>
 </head>
 
 <body class="page">
-  <header class="site-header">
+  <header class="site-header site-header--blend">
     <div class="container">
-      <nav class="nav">
-        <!-- Logo -->
-        <a class="logo" href="#start" aria-label="Zur Startseite">
-          <img
-            src="assets/Logo Hausverwaltung Deusch dunkel.png"
-            alt="Hausverwaltung Deusch Logo"
-            class="logo-image"
-          />
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a class="logo" href="#start">
+          <img class="logo-image" src="./assets/img/Logo.png" alt="Hausverwaltung Deusch" />
         </a>
 
-        <!-- Burger (nur Mobile) -->
-        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
-          <span></span><span></span><span></span>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen">
+          <span class="hamburger"></span>
         </button>
 
-        <!-- Links -->
         <div class="nav-links" id="navLinks">
-          <a href="#start">Start</a>
-          <a href="#ueber-uns">Über uns</a>
-          <a href="#projekte">Projekte</a>
-          <a href="#kontakt">Kontakt</a>
-
-          <a href="mailto:hausverwaltung@deusch.de" class="nav-cta">
-            Kontakt per E-Mail <span>→</span>
-          </a>
+          <a class="is-active" aria-current="page" href="#start">Start</a>
+          <a href="angebot.html">Angebot</a>
+          <a href="projects.html">Projekte</a>
+          <a class="nav-cta" href="#kontakt">Kontakt</a>
         </div>
       </nav>
     </div>
@@ -56,34 +40,31 @@
     <!-- Hero -->
     <section id="start" class="container hero">
       <div class="hero-content fade-in">
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          <span>Altstadt · Burghausen</span>
-        </div>
+        <div class="eyebrow">Burghausen · Region</div>
 
         <h1>
-          Altbau. Erhalten.<br/>
+          Altbau. Erhalten.<br />
           Modernisieren. <span class="accent">Mit Herzblut.</span>
         </h1>
 
         <p class="hero-lead">
-          Hausverwaltung Deusch ist ein bodenständiges Familienunternehmen und Hausverwaltung in Burghausen.
-          Wir kümmern uns um Altbaurenovierungen, Kernsanierungen, Wohnungen und Bäder
-          in der Burghauser Altstadt – sorgfältig, persönlich und langfristig gedacht.
+          Hausverwaltung Deusch ist ein bodenständiges Familienunternehmen in Burghausen.
+          Wir kümmern uns um Altbaurenovierungen, Kernsanierungen, Wohnungen in der Burghauser Umgebung –
+          sorgfältig, persönlich und langfristig gedacht.
         </p>
 
         <div class="hero-badges">
           <div class="hero-badge">Familienunternehmen aus Burghausen</div>
-          <div class="hero-badge">Fokus auf Altbau & Kernsanierung</div>
-          <div class="hero-badge">Altstadtwohnungen mit Charakter</div>
+          <div class="hero-badge">Hausverwaltung & Vermietung</div>
+          <div class="hero-badge">Altstadt verwurzelt</div>
         </div>
 
         <div class="hero-actions">
-          <a href="mailto:hausverwaltung@deusch.de" class="btn-primary">
-            Anfrage per E-Mail senden <span>→</span>
+          <a href="mailto:hausverwaltung.deusch@gmail.com" class="btn-primary">
+            Anfrage per E-Mail senden →
           </a>
           <a href="#projekte" class="btn-secondary">
-            Renovierungsprojekte ansehen
+            Einblicke ansehen
           </a>
         </div>
       </div>
@@ -98,20 +79,21 @@
       <div class="container">
         <div class="section-header fade-in">
           <div class="section-eyebrow">Über uns</div>
-          <div class="section-title">Ein Familienunternehmen mit Herz für Altbau</div>
+          <div class="section-title">Ein Familienunternehmen mit Herz und Verantwortung</div>
           <p class="section-subtitle">
-            Hausverwaltung Deusch steht für bodenständiges Familienunternehmen und eine gute Hausverwaltung und verlässliche Arbeit
-            in der Burghauser Altstadt. Wir betreuen Altbauwohnungen, Häuser und Bäder
-            mit Respekt vor der Substanz und einem klaren Blick für moderne Ansprüche.
+            Hausverwaltung Deusch steht für bodenständige, verlässliche Arbeit in der Burghauser Umgebung.
+            Wir betreuen Denkmalschutzobjekte und Mehrfamilienhäuser wirtschaftlich und mit Respekt vor der Substanz
+            – mit einem klaren Blick in die Zukunft.
           </p>
         </div>
 
         <div class="about-grid">
+          <!-- LINKS: Textboxen -->
           <div>
             <div class="about-card fade-in">
               <h3>Familiengeführt & regional verwurzelt</h3>
               <p>
-                Wir sind in Burghausen zu Hause und kennen die Altstadt aus dem Alltag.
+                Wir sind in Burghausen zu Hause und sind in der Altstadt verwurzelt.
                 Kurze Wege, direkter Kontakt und Entscheidungen ohne Konzernlogik –
                 das ist unser Verständnis von Hausverwaltung.
               </p>
@@ -122,62 +104,55 @@
             </div>
 
             <div class="about-card fade-in">
-              <h3>Altbau erhalten, Wohnen verbessern</h3>
+              <h3>Hausverwaltung, Vermietung & Werterhalt</h3>
               <p>
-                Unsere Projekte reichen von Kernsanierungen über neue Bäder
-                bis zur Aufwertung von Außenbereichen. Ziel ist immer:
-                langlebige Qualität und ein stimmiges Wohngefühl.
+                Neben der Betreuung und Vermietung von Wohnraum übernehmen wir bei Bedarf
+                auch Sanierungs- und Modernisierungsmaßnahmen – zuverlässig geplant, sauber umgesetzt
+                und wirtschaftlich sinnvoll.
               </p>
               <div class="about-tags">
-                <span class="about-tag">Kernsanierung</span>
-                <span class="about-tag">Altbau-Bäder</span>
-                <span class="about-tag">Wohnungen mit Geschichte</span>
+                <span class="about-tag">Hausverwaltung</span>
+                <span class="about-tag">Vermietung</span>
+                <span class="about-tag">Werterhalt</span>
               </div>
             </div>
           </div>
 
-          <div class="about-visual">
-            <div class="about-photo-main fade-in">
+          <!-- RECHTS: Bilder -->
+          <div class="about-visual about-visual--match">
+            <div class="about-photo fade-in">
               <img
-                src="assets/Burghauser Burg winter.jpeg"
-                alt="Burghauser Burg im Winter"
-                class="about-image-main"
+                src="./assets/img/head-altstadt.jpeg"
+                alt="Altstadt Burghausen"
+                class="about-image-fit about-image-fit--match"
                 loading="lazy"
               />
             </div>
 
-            <div class="about-photo-row">
-              <div class="about-photo fade-in">
-                <img
-                  src="assets/Altstadt foto.jpg"
-                  alt="Altstadt Burghausen"
-                  class="about-image-small"
-                  loading="lazy"
-                />
-              </div>
-
-              <div class="about-photo fade-in">
-                <img
-                  src="assets/projects/140_wohnung_vorschau.JPG"
-                  alt="Wohnung Vorschau – Hausverwaltung Deusch"
-                  class="about-image-small"
-                  loading="lazy"
-                />
-              </div>
+            <div class="about-photo fade-in">
+              <img
+                src="./assets/img/Burg-winter.jpeg"
+                alt="Burghauser Burg im Winter"
+                class="about-image-fit about-image-fit--match"
+                loading="lazy"
+              />
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Projekte -->
+    <!-- Einblicke -->
     <section id="projekte">
       <div class="container">
         <div class="section-header fade-in">
-          <div class="section-eyebrow">Projekte</div>
+          <div class="section-eyebrow">Einblicke</div>
           <div class="section-title">Einblicke in unsere Arbeit</div>
           <p class="section-subtitle">
-            Drei Beispiele aus der Burghauser Altstadt: Kernsanierung, Badmodernisierung und eine Terrasse mit Burgblick.
+            Drei Beispiele aus Burghausen: Kernsanierung, Badmodernisierung und eine Terrasse mit Burgblick.
+            Für ausführlichere Projektberichte mit mehr Bildern:
+            <a class="inline-link" href="projects.html">Zur Projektseite</a>.
           </p>
         </div>
 
@@ -186,11 +161,11 @@
           <article class="project-card fade-in">
             <div class="project-media">
               <div class="project-half">
-                <img src="assets/projects/181_wohnung_vorher.jpg" alt="Wohnung vorher" class="project-image" loading="lazy"/>
+                <img src="./assets/img/projects/181_wohnung_vorher.jpg" alt="Wohnung vorher" class="project-image" loading="lazy"/>
                 <span class="project-label">Vorher</span>
               </div>
               <div class="project-half">
-                <img src="assets/projects/181_wohnung_nachher.jpg" alt="Wohnung nachher" class="project-image" loading="lazy"/>
+                <img src="./assets/img/projects/181_wohnung_nachher.jpg" alt="Wohnung nachher" class="project-image" loading="lazy"/>
                 <span class="project-label right">Nachher</span>
               </div>
             </div>
@@ -203,7 +178,7 @@
               </p>
               <div class="project-meta">
                 <span class="project-pill">Kernsanierung</span>
-                <span class="project-pill">Burghausen Altstadt</span>
+                <span class="project-pill">Raum Burghausen</span>
                 <span class="project-pill">2 Zimmer</span>
               </div>
               <div class="project-footer">
@@ -217,11 +192,11 @@
           <article class="project-card fade-in">
             <div class="project-media">
               <div class="project-half">
-                <img src="assets/projects/140_bad_vorher.jpg" alt="Bad vorher" class="project-image" loading="lazy"/>
+                <img src="./assets/img/projects/140_bad_vorher.jpg" alt="Bad vorher" class="project-image" loading="lazy"/>
                 <span class="project-label">Vorher</span>
               </div>
               <div class="project-half">
-                <img src="assets/projects/140_bad_nachher.jpg" alt="Bad nachher" class="project-image" loading="lazy"/>
+                <img src="./assets/img/projects/140_bad_nachher.jpg" alt="Bad nachher" class="project-image" loading="lazy"/>
                 <span class="project-label right">Nachher</span>
               </div>
             </div>
@@ -234,11 +209,11 @@
               </p>
               <div class="project-meta">
                 <span class="project-pill">Badmodernisierung</span>
-                <span class="project-pill">Burghausen Altstadt</span>
+                <span class="project-pill">Raum Burghausen</span>
               </div>
               <div class="project-footer">
                 <span class="project-highlight">Neue Wasser- & Abwasserleitungen · bessere Raumnutzung</span>
-                <span>Dauer: ca. 6–8 Wochen</span>
+                <span>Dauer: ca. 2–3 Wochen</span>
               </div>
             </div>
           </article>
@@ -247,11 +222,11 @@
           <article class="project-card fade-in">
             <div class="project-media">
               <div class="project-half">
-                <img src="assets/projects/140_terrasse_vorher.jpg" alt="Terrasse vorher" class="project-image" loading="lazy"/>
+                <img src="./assets/img/projects/140_terrasse_vorher.jpg" alt="Terrasse vorher" class="project-image" loading="lazy"/>
                 <span class="project-label">Vorher</span>
               </div>
               <div class="project-half">
-                <img src="assets/projects/140_terrasse_nachher.jpg" alt="Terrasse nachher" class="project-image" loading="lazy"/>
+                <img src="./assets/img/projects/140_terrasse_nachher.jpg" alt="Terrasse nachher" class="project-image" loading="lazy"/>
                 <span class="project-label right">Nachher</span>
               </div>
             </div>
@@ -264,7 +239,7 @@
               </p>
               <div class="project-meta">
                 <span class="project-pill">Terrasse</span>
-                <span class="project-pill">Altstadt</span>
+                <span class="project-pill">Burghausen</span>
                 <span class="project-pill">Burgblick</span>
               </div>
               <div class="project-footer">
@@ -284,26 +259,26 @@
           <div>
             <h2 class="contact-title">Kontakt</h2>
             <p class="contact-text">
-              Sie interessieren sich für eine sanierte Wohnung in der Burghauser Altstadt
-              oder möchten mehr über unsere Projekte erfahren? Schreiben Sie uns eine E-Mail.
+              Sie interessieren sich für unsere Hausverwaltung und unsere Dienste oder möchten mehr über unsere Projekte erfahren?
+              Schreiben Sie uns eine E-Mail.
             </p>
 
-            <a href="mailto:hausverwaltung@deusch.de" class="contact-email">
-              <span>✉</span> hausverwaltung@deusch.de
+            <a href="mailto:hausverwaltung.deusch@gmail.com" class="contact-email">
+              <span>✉</span> hausverwaltung.deusch@gmail.com
             </a>
 
             <p class="contact-note">
-              Hinweis: Wir übernehmen keine Renovierungsaufträge oder Bauleistungen für Dritte.
-              Unsere Arbeiten erfolgen ausschließlich im Rahmen der Betreuung und Entwicklung unserer eigenen Objekte.
+              Hinweis: Wir übernehmen Hausverwaltungsaufträge sowie die Vermietung und Betreuung von Wohnobjekten.
+              Sanierungs- und Modernisierungsmaßnahmen stimmen wir individuell ab – abhängig von Objekt, Umfang und Kapazität.
             </p>
           </div>
 
           <div class="contact-aside">
             <strong>Schwerpunkt</strong>
             <p>
-              · Altstadt-Objekte in Burghausen<br/>
-              · Modernisierung und Sanierung unserer Bestände<br/>
-              · Hausverwaltung mit klaren Standards
+              · Hausverwaltung im Raum Burghausen<br/>
+              · Vermietung & Objektbetreuung<br/>
+              · Werterhalt durch sinnvolle Modernisierung
             </p>
           </div>
         </div>
@@ -311,16 +286,22 @@
     </section>
   </main>
 
+  <!-- Footer: ID entfernt, damit "kontakt" eindeutig bleibt -->
   <footer>
     <div class="container footer-inner">
-      <span>© <span id="year"></span> Hausverwaltung Deusch · Burghausen</span>
+      <div>© <span id="year"></span> Hausverwaltung Deusch</div>
       <div class="footer-links">
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </div>
+      <div>
+        <a class="inline-link" href="mailto:hausverwaltung.deusch@gmail.com">hausverwaltung.deusch@gmail.com</a>
+      </div>
     </div>
   </footer>
 
-  <script src="js/main.js" defer></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
