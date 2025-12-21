@@ -1,19 +1,26 @@
 /* assets/js/main.js
    Hausverwaltung Deusch – Global UI behaviour
-   - Hero parallax/fade
-   - Scroll fade-in
    - Footer year
-   - Mobile nav toggle + accessibility
+   - Hero parallax / fade
+   - Scroll fade-in
+   - Mobile navigation
+   - Offer image slider (buttons, dots, swipe)
 */
 
 (() => {
   "use strict";
 
-  // ---------- Footer Year ----------
+  /* =========================
+     FOOTER YEAR
+  ========================= */
   const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  if (yearEl) {
+    yearEl.textContent = String(new Date().getFullYear());
+  }
 
-  // ---------- Hero parallax / fade ----------
+  /* =========================
+     HERO PARALLAX / FADE
+  ========================= */
   const heroVisual = document.getElementById("hero-visual");
   if (heroVisual) {
     const onScroll = () => {
@@ -27,10 +34,12 @@
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll(); // init
+    onScroll();
   }
 
-  // ---------- Scroll Fade-In ----------
+  /* =========================
+     SCROLL FADE-IN
+  ========================= */
   const fadeElements = document.querySelectorAll(".fade-in");
   if (fadeElements.length) {
     if ("IntersectionObserver" in window) {
@@ -48,59 +57,135 @@
 
       fadeElements.forEach(el => observer.observe(el));
     } else {
-      // Fallback for very old browsers
       fadeElements.forEach(el => el.classList.add("in-view"));
     }
   }
 
-  // ---------- Mobile Nav Toggle ----------
+  /* =========================
+     MOBILE NAVIGATION
+  ========================= */
   const navToggle = document.getElementById("navToggle");
   const navLinks = document.getElementById("navLinks");
 
-  const openMenu = () => {
-    navLinks.classList.add("open");
-    navToggle.setAttribute("aria-expanded", "true");
-  };
-
-  const closeMenu = () => {
-    navLinks.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
-  };
-
-  const isMenuOpen = () => navLinks.classList.contains("open");
-
   if (navToggle && navLinks) {
-    navToggle.addEventListener("click", (e) => {
+    const isOpen = () => navLinks.classList.contains("open");
+
+    const openMenu = () => {
+      navLinks.classList.add("open");
+      navToggle.setAttribute("aria-expanded", "true");
+    };
+
+    const closeMenu = () => {
+      navLinks.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    };
+
+    navToggle.addEventListener("click", e => {
       e.preventDefault();
-      isMenuOpen() ? closeMenu() : openMenu();
+      isOpen() ? closeMenu() : openMenu();
     });
 
-    // Close on link click
-    navLinks.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", e => {
+      if (!isOpen()) return;
+      if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
         closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && isOpen()) closeMenu();
+    });
+
+    window.addEventListener(
+      "resize",
+      () => {
+        if (window.getComputedStyle(navToggle).display === "none" && isOpen()) {
+          closeMenu();
+        }
+      },
+      { passive: true }
+    );
+  }
+
+  /* =========================
+     OFFER IMAGE SLIDER
+  ========================= */
+  const slider = document.getElementById("offerSlider");
+  if (slider) {
+    const slides = Array.from(slider.querySelectorAll(".offer-slide"));
+    const prevBtn = slider.querySelector(".offer-nav--prev");
+    const nextBtn = slider.querySelector(".offer-nav--next");
+    const dotsContainer = slider.querySelector(".offer-dots");
+
+    let index = 0;
+    let startX = 0;
+    let isDragging = false;
+
+    const showSlide = i => {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle("active", idx === i);
       });
+
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll("button").forEach((dot, idx) => {
+          dot.classList.toggle("active", idx === i);
+        });
+      }
+    };
+
+    const next = () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    };
+
+    const prev = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    };
+
+    // Buttons
+    if (prevBtn) prevBtn.addEventListener("click", prev);
+    if (nextBtn) nextBtn.addEventListener("click", next);
+
+    // Dots
+    if (dotsContainer) {
+      slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Bild ${i + 1}`);
+        dot.addEventListener("click", () => {
+          index = i;
+          showSlide(index);
+        });
+        dotsContainer.appendChild(dot);
+      });
+      showSlide(index);
+    }
+
+    // Touch / Swipe
+    slider.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
     });
 
-    // Close on click outside (mobile)
-    document.addEventListener("click", (e) => {
-      if (!isMenuOpen()) return;
-      const target = e.target;
-      const clickedInsideNav = navLinks.contains(target) || navToggle.contains(target);
-      if (!clickedInsideNav) closeMenu();
+    slider.addEventListener("touchend", e => {
+      if (!isDragging) return;
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        diff > 0 ? next() : prev();
+      }
+      isDragging = false;
     });
 
-    // Close on ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && isMenuOpen()) closeMenu();
+    // Keyboard
+    slider.addEventListener("keydown", e => {
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
     });
-
-    // Close menu when switching to desktop layout (optional safety)
-    window.addEventListener("resize", () => {
-      // When navToggle is hidden in desktop, ensure menu isn't stuck open
-      const toggleStyle = window.getComputedStyle(navToggle);
-      const toggleHidden = toggleStyle.display === "none";
-      if (toggleHidden && isMenuOpen()) closeMenu();
-    }, { passive: true });
   }
 })();
