@@ -640,3 +640,175 @@ footer{border-top:1px solid var(--border);padding:18px 0;color:var(--muted);font
   .offer-grid{grid-template-columns:1fr}
   .offer-slide img{height:320px}
 }
+/* =========================================
+   MOBILE CLEANUP (Handy)
+   Ziel: kein Überlaufen, saubere Abstände,
+   Header bleibt "floating", Inhalte rutschen nicht drunter
+========================================= */
+
+html, body { width: 100%; overflow-x: hidden; }
+img { height: auto; }
+
+/* Container etwas schmaler auf Handy */
+@media (max-width: 760px){
+  .container{ padding: 0 16px; }
+}
+
+/* Sticky Header: mehr Sicherheit für Inhalt-Anker */
+@media (max-width: 900px){
+  #start{ scroll-margin-top: 120px; }
+  #bewerben{ scroll-margin-top: 120px; }
+  #projekte{ scroll-margin-top: 120px; }
+  #kontakt{ scroll-margin-top: 120px; }
+}
+
+/* NAV: Dropdown soll innerhalb vom Header-Container "floaten" */
+@media (max-width: 900px){
+  .site-header{ top: 10px; }
+  .nav{ height: 68px; }
+  .logo-image{ height: 50px; }
+
+  .nav-links{
+    top: 68px;                /* direkt unter der Navbar */
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.55);
+  }
+}
+
+/* HERO: Bild oben, Text darunter, Buttons volle Breite */
+@media (max-width: 760px){
+  .hero{
+    grid-template-columns: 1fr;
+    padding: 18px 0 44px;
+    gap: 16px;
+  }
+
+  .hero-visual-wrapper{
+    order: -1;
+    min-height: 210px;
+    border-radius: 22px;
+  }
+
+  .hero-content{ max-width: 100%; }
+  .hero h1{
+    font-size: clamp(2.0rem, 8.6vw, 2.7rem);
+    line-height: 1.06;
+  }
+  .hero-lead{ max-width: none; }
+
+  .hero-actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-primary, .btn-secondary{
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-badges{ gap: 10px; }
+}
+
+/* ABOUT: Bilder sauber stapeln */
+@media (max-width: 1024px){
+  .about-grid{ grid-template-columns: 1fr; }
+  .about-visual{ gap: 12px; }
+}
+
+/* PROJECTS: Karten sauber, keine krummen Höhen */
+@media (max-width: 1024px){
+  .projects-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 760px){
+  .projects-grid{ grid-template-columns: 1fr; }
+  .project-media{ height: 200px; }
+  .project-footer{
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* CONTACT: Spalten -> untereinander */
+@media (max-width: 1024px){
+  .contact-card{
+    grid-template-columns: 1fr;
+  }
+  .contact-aside{
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding-left: 0;
+    padding-top: 14px;
+  }
+}
+
+/* OFFER (Angebot): Slider + Daten untereinander, Buttons full width */
+@media (max-width: 1024px){
+  .offer-layout{ grid-template-columns: 1fr; }
+}
+@media (max-width: 760px){
+  .offer-slide img{ height: 280px; }
+
+  .offer-downloads{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .offer-downloads a{ width: 100%; text-align: center; }
+}
+/* =========================
+   MOBILE SAFE PADDING
+========================= */
+@media (max-width: 760px){
+  body{
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+/* =========================
+   MOBILE SAFE PADDING
+========================= */
+@media (max-width: 760px){
+  body{
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 760px){
+  .site-header{
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  .site-header .container{
+    border-radius: 18px;
+  }
+}
+@media (max-width: 760px){
+  .hero-visual-wrapper{
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .hero-content{
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+@media (max-width: 760px){
+  .hero-actions,
+  .contact-card,
+  .offer-data{
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
